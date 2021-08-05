@@ -10,6 +10,9 @@
   },
   "scripts": {
     "prebuild": "rimraf dist npm run lint format",
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run lint && npm run prebuild && npm run build && npm run test && npm run test:cov",
+    "prepare": "husky install",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -47,7 +50,7 @@
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^7.0.1",
+    "husky": "^7.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^11.1.1",
     "prettier": "^2.1.2",
