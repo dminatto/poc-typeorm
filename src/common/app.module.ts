@@ -8,7 +8,7 @@ import { UserModule } from '../user/user.module';
     TypeOrmModule.forRoot({
       autoLoadEntities: true,
     }),
-    ReviewModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [],

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist npm run lint format",
-    "pre-commit": "lint-staged",
+    "pre-commit": "npm run lint && npm run test && npm run test:cov",
     "pre-push": "npm run lint && npm run prebuild && npm run build && npm run test && npm run test:cov",
     "prepare": "husky install",
     "build": "nest build",

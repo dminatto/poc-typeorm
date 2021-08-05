@@ -27,7 +27,8 @@ describe('User', () => {
   it('should be able to create a new user', async () => {
     const req = {
       id: 1,
-      name: 'John Doe',
+      firstName: 'John',
+      lastName: 'Doe',
       email: 'teste@email.net',
       anonymous: false,
     };
@@ -36,19 +37,21 @@ describe('User', () => {
       async () =>
         await {
           id: 1,
-          name: 'John Doe',
+          firstName: 'John',
+          lastName: 'Doe',
           email: 'teste@email.net',
           anonymous: false,
         },
     );
 
     const user = await mockedUserFacede.createNewUser(
-      'John Doe',
+      'John',
+      'Doe',
       'teste@email.net',
       false,
     );
 
-    expect(user.name).toBe(req.name);
+    expect(user.firstName).toBe(req.firstName);
     expect(user.email).toBe(req.email);
     expect(user.anonymous).toBe(req.anonymous);
   });

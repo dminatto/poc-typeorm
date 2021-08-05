@@ -8,10 +8,16 @@ export class UserFacede {
 
   async createNewUser(
     email: string,
-    name: string,
+    firstName: string,
+    lastName: string,
     anonymous: boolean,
   ): Promise<User> {
-    return await this.userService.create({ name, email, anonymous });
+    return await this.userService.create({
+      firstName,
+      lastName,
+      email,
+      anonymous,
+    });
   }
 
   async getAllUser(): Promise<User[]> {

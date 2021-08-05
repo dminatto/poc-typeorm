@@ -13,7 +13,12 @@ export class UserController {
 
   @Post()
   async create(@Req req): Promise<User> {
-    const { name, email, anonymous } = req.body;
-    return await this.userFacede.createNewUser(name, email, anonymous);
+    const { firstName, lastName, email, anonymous } = req.body;
+    return await this.userFacede.createNewUser(
+      firstName,
+      lastName,
+      email,
+      anonymous,
+    );
   }
 }
